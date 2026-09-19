@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kraayenjon/awesome-jev/main/assets/banner.svg" alt="Awesome Jev — typed decisions for software" width="100%">
+  <img src="https://raw.githubusercontent.com/kraayenjon/awesome-jev/main/assets/cover.jpeg" alt="Awesome Jev — typed decisions for software" width="100%">
 </p>
 
 <h1 align="center">Awesome Jev</h1>
