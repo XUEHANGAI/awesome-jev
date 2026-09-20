@@ -248,6 +248,7 @@ Open-source projects that put Jev in a real loop. Grouped by what Jev decides.
 - [Mobile Jev](https://github.com/droidrun/mobile-jev) - Android agent on Mobilerun: Jev decides each tap. Opens Uber, SFO → Golden Gate, payment screen in ~21 s / 9 actions. No ADB.
 - [Unclutter](https://github.com/kitze/unclutter) - Chrome / Firefox extension: Jev classifies nonessential page elements; local template rules hide them on later visits.
 - [TypeSafe AdBlock](https://github.com/realZachi/typesafe-adblock) - Chrome extension: Jev judges whether a DOM element is an ad and removes it. BYOK, no backend; a demo, not a real ad blocker.
+- [jev-skip](https://github.com/valentynkit/jev-skip) - Browser extension that reads a YouTube video's caption track and paints a per-segment sponsor probability on the seek bar before the intro ends, with no crowdsourced database.
 
 → [More agents and browsers on madewithjev.com](https://madewithjev.com/categories/agents-and-browsers)
 
@@ -262,6 +263,7 @@ Open-source projects that put Jev in a real loop. Grouped by what Jev decides.
 - [sqlite3-jev](https://github.com/mattn/sqlite3-jev) - SQLite C extension: `jev_noul` / `jev_choice` / `jev_score` as SQL functions via libcurl.
 - [jev-curate](https://github.com/AkashPriyadarshii/jev-curate) - High-throughput synthetic dataset sifter in Rust: Noul checks on JSONL and Parquet rows, streaming clean and rejected rows to disk.
 - [1kpapers](https://www.1kpapers.com/) - 1,018 papers classified by topic and published as a browsable site.
+- [jev.nvim](https://github.com/valentynkit/jev.nvim) - Neovim plugin that splits the current buffer into functions with Treesitter, asks Jev a plain-language question against each one, and lists the answers in the quickfix window ranked by probability.
 
 → [More research and data builds on madewithjev.com](https://madewithjev.com/categories/research-and-data)
 
@@ -284,6 +286,7 @@ Open-source projects that put Jev in a real loop. Grouped by what Jev decides.
 - [Notra](https://github.com/usenotra/notra) - Marketing analytics: its `NOTRA_JEV_CLASSIFIERS` flag routes brand-visibility classifiers off an LLM and onto Jev boolean decisions at a 0.5 threshold, targeting 300 ms p50.
 - [jev-eval-agent](https://github.com/vinilana/jev-eval-agent) - Public eval harness for early Jev tests.
 - [Supercov](https://github.com/supercorp-ai/supercov) - Code quality and test coverage for coding agents: Jev scores each source file so the agent knows what to fix first.
+- [jev-commit](https://github.com/valentynkit/jev-commit) - Pre-commit hook where one Jev call judges whether the commit message matches the staged diff, checks for debug leftovers and unmentioned work, and blocks the commit only when it detects a credential.
 
 ### Model routing
 
@@ -307,7 +310,8 @@ Open-source projects that put Jev in a real loop. Grouped by what Jev decides.
 - [citation-verifier](https://github.com/MarissaFamularo/citation-verifier) - Checks whether each cited paper actually supports the sentence citing it: Claude locates the quote, Jev scores the support, a human makes the final call.
 - [LegalForecast-MTD](https://github.com/johnhughes3/LegalForecastBench) - Benchmark that asks Jev to predict federal motion-to-dismiss rulings, scored with claim-defendant micro-Brier metrics.
 - [Smart home assistant demo](https://docs.typesafe.ai/demos/smart-home) - Official interactive demo of speculative fan-out: many questions in one call, code keeps the relevant answers, LLM only for splits and chit-chat.
-- [SmartMoney-Cub](https://github.com/myc0576/Smartmoney-Cub) - Experimental, read-only trading journal and review harness: post-trade journals, filing excerpts, industry-event wires and central-bank statements go in as state; Jev answers Choice, Noul and Score questions about evidence sufficiency, counter-evidence, failure mode and policy stance; and the code keeps those typed answers as review evidence for a human to promote or reject, without ever placing an order.
+- [SmartMoney-Cub](https://github.com/myc0576/Smartmoney-Cub) - Experimental, read-only trading journal that passes filings, event wires and central-bank statements to Jev for typed Choice, Noul and Score answers on evidence and policy stance, keeping a human in the promote/reject loop and never placing an order.
+- [Jev Web Analyzer](https://github.com/replynodes/jev-web-analyzer) - Product evaluation: evaluates a public SaaS landing page as clean Markdown with ten bounded Jev `Choice` questions about first-visit understanding, leaving validation, policy, and presentation in application code.
 
 ### Robotics and hardware
 
@@ -316,8 +320,6 @@ Open-source projects that put Jev in a real loop. Grouped by what Jev decides.
 - [robo-harness](https://github.com/grmkris/robo-harness) - SO-101 arm workbench: a Jev decision runner picks bounded joint steps from typed candidate actions under a spend budget.
 
 → [More robotics and devices on madewithjev.com](https://madewithjev.com/categories/robotics-and-devices)
-
-- [Jev Web Analyzer](https://github.com/replynodes/jev-web-analyzer) - Product evaluation: evaluates a public SaaS landing page as clean Markdown with ten bounded Jev `Choice` questions about first-visit understanding, leaving validation, policy, and presentation in application code.
 
 ## Demos and games
 
@@ -340,6 +342,7 @@ Toys, live sites, and realtime agents. Most shipped in the first days after laun
 - [TypeSafe Typewriter](https://typesafe-demo.val.run/) - Live Val Town demo: 16 typed judgments update as you type.
 - [got-jev](https://github.com/phureewat29/got-jev) - Game of Thrones roleplay: a story model writes the scene; Jev answers where Jon Snow is, how much danger, and what should play under it.
 - [Little Airways](https://github.com/lbotinelly/jev-little-airways) - Toy archipelago air-traffic control: divert / emergency / who lands first, ~150 ms.
+- [jev-plays-pokemon-red](https://github.com/valentynkit/jev-plays-pokemon-red) - Pokemon Red on PyBoy where code owns the route and the arithmetic, Jev picks only at branches, and every battle turn logs a faint prediction scored by Brier against what the RAM says.
 
 → [More games and real-time builds on madewithjev.com](https://madewithjev.com/categories/games-and-real-time)
 
@@ -370,6 +373,7 @@ Tools that expose Jev to coding agents and MCP clients.
 - [limpet](https://github.com/noplan-inc/limpet) - Stop hook that keeps an agent from finishing too early by judging plain-language completion rules with Jev.
 - [jev-guard](https://github.com/leepokai/jev-guard) - Prompt-injection and dangerous-action guard for Claude Code, Codex, Pi, and ACP agents.
 - [dsh-auto-mode](https://git.allen-software.com/allenh1/dsh-auto-mode) - DeepSeek Harness permission preset whose end-prompt step has Jev answer the open questions an agent leaves in its final message.
+- [jev-belay](https://github.com/valentynkit/jev-belay) - Claude Code Stop hook that reads the transcript for evidence of a completed task and, only when files changed with no passing check since, spends one four-question Jev call before allowing the agent to stop, failing open on every error path.
 
 ## Use cases by industry
 
